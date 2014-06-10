@@ -316,7 +316,7 @@ var Search = {
    */
   query : function(query) {
     var i;
-    var stopwords = ["these","of","but","the","on","such","was","their","are","to","not","a","then","and","will","that","if","no","they","for","near","as","at","in","into","this","or","by","is","there","with","be","it"];
+    var stopwords = ["their","was","that","at","but","of","a","as","such","for","will","no","be","are","this","they","if","with","then","it","the","not","or","to","in","there","by","into","on","is","and","near","these"];
 
     // stem the searchterms and add them to the correct list
     var stemmer = new Stemmer();

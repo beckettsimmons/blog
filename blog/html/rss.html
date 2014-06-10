@@ -8,6 +8,55 @@
         <pubDate>Tue, 10 Jun 2014 00:00:00 -0300</pubDate>
         
         <item>
+            <link>http://127.0.0.1/blog/html/2014/06/10/tinkererblogging.html</link>
+            <guid>http://127.0.0.1/blog/html/2014/06/10/tinkererblogging.html</guid>
+            <title><![CDATA[This Blog with Tinkerer and Github]]></title>
+            <description><![CDATA[<h1>This Blog with Tinkerer and Github</h1>
+<p>So I though it would be nice to write down how I use Tinkerer and Github to write this here blog.</p>
+<div class="section" id="setup">
+<h2>Setup</h2>
+<p>First things first. I started by creating a new repo on Github and cloned it to my local machine:</p>
+<div class="highlight-python"><pre>git clone https://github.com/beckettsimmons/blog.git</pre>
+</div>
+<p>Next I <strong>cd</strong> to my blogs directory and setup tinkerer. Which assumes that you actually got it installed correctly...</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">tinker</span> <span class="o">--</span><span class="n">setup</span>
+</pre></div>
+</div>
+<p>Then as instructed I edit my <em>conf.py</em> file with the necessary details.
+This includes the <em>withgithub</em> extension. So I have to edit that line in my <em>conf.py</em> to look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Add other Sphinx extensions here</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s">'tinkerer.ext.blog'</span><span class="p">,</span> <span class="s">'tinkerer.ext.disqus'</span><span class="p">,</span> <span class="s">'withgithub'</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Next I need to add the <em>_exts</em> folder to my blog’s root and drop <a class="reference external" href="https://github.com/vladris/tinkerer-contrib/blob/master/withgithub/withgithub.py">withgithuwithb.py</a> inside.</p>
+<p>Lastly, I setup the <strong>gh-pages</strong> branch that I will commit blog builds to which will be publish to Github:</p>
+<div class="highlight-python"><pre>git checkout --orphan gh-pages
+git rm -rf .</pre>
+</div>
+<div class="section" id="daily-use">
+<h3>Daily Use</h3>
+<p>This is how typically add a post, page, or modify my blog. Firstly, I just make sure that my git directory on <strong>master</strong> branch is clean and ready to use. Then I can start to use Tinkerer to, say, make a new post:</p>
+<div class="highlight-python"><pre>tinker --post "myCoolPost"</pre>
+</div>
+<p>Yes, for whatever reasons I dislike spaces in any names... That then creates a new .rst file in a location similar to <em>/2014/05/10/myCoolPost.rst</em>. I just copy and post my post into that file.</p>
+<p>I then commit my newest post on my <strong>master</strong> branch.</p>
+<div class="highlight-python"><pre>git commit -m "Added a cool post"</pre>
+</div>
+<p>Now, this is the part where I hack it. First I build my Tinkerer blog on <strong>master</strong>, then stash my changes, checkout gh-pages and forcefully apply the stash.</p>
+<div class="highlight-python"><pre>tinker --build
+git stash save myCoolPost
+git checkout gh-pages
+git checkout stash@{0} -- . #overwrite directory with stash</pre>
+</div>
+<p>After that I just simply add the new files, commit, then push. The new post is now up on a git page!</p>
+<p>#TODO: Proof Read this blog.</p>
+</div>
+</div>
+]]></description>
+             <pubDate>Tue, 10 Jun 2014 00:00:00 -0300</pubDate>
+        </item>
+    
+        <item>
             <link>http://127.0.0.1/blog/html/2014/06/10/june2.html</link>
             <guid>http://127.0.0.1/blog/html/2014/06/10/june2.html</guid>
             <title><![CDATA[First Day]]></title>
