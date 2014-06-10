@@ -1,0 +1,1 @@
+Search.setIndex({terms:{vim:0,window:0,been:0,have:0,instal:0,readi:0,tmr:0,environ:0,first:[0,1],just:0,softwar:0,depend:0,net:0,thi:0,get:0,desk:0,virtual:0,includ:0,todai:0,python2:0,dai:[0,1],sitemap:1,virtualenv:0,python3:0,git:0,client:0,thin:0,desktop:0},objects:{},titles:["First Day","Sitemap"],objnames:{},objtypes:{},filenames:["2014/06/10/june2","master"]})
